@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <nav class="navBar"> 
+      <div class="rightItems">
+        <div id="logoDiv" class="navItems"><img src="images/logo.svg" alt="SVG Icon" id="logoSVG" class="SVG"></div>
+        <div id="collectionsDiv"><a href="collections" id="collections" class="navItems">Collections</a></div>
+        <div id="menDiv"><a href="men" id="men" class="navItems">Men</a></div>
+        <div id="womenDiv"><a href="women" id="women" class="navItems">Women</a></div>
+        <div id="aboutDiv"><a href="about" id="about" class="navItems">About</a></div>
+        <div id="contactDiv"><a href="contact" id="contact" class="navItems">Contact</a></div>
+      </div>  
+      <div class="leftItems">
+        <div id="cartDiv1" class="navItems"><img src="images/icon-cart.svg" alt="SVG Cart" id="cartSVG" class="SVG"></div>
+        <div id="avatarDiv" class="navItems"><img src="images/image-avatar.png" alt="SVG Avatar" id="avatarSVG" class="SVG"></div>
+      </div>
+    </nav>
+    
+    
+
+    <div class="productImgContainer">
+      <div class="largeImage">
+        <img src="images\image-product-1.jpg" class="image" id="mainImage">
+      </div>
+      <div class="galleryWrapper">
+        <div class="galleryImage">
+          <img src="images\image-product-1.jpg" class="image" onclick="changeImage('images/image-product-1.jpg')">
+        </div>
+        <div class="galleryImage">
+          <img src="images\image-product-2.jpg" class="image" onclick="changeImage('images/image-product-2.jpg')">
+        </div>
+        <div class="galleryImage">
+          <img src="images\image-product-3.jpg" class="image" onclick="changeImage('images/image-product-3.jpg')"> 
+        </div>
+        <div class="galleryImage">
+          <img src="images\image-product-4.jpg" class="image" onclick="changeImage('images/image-product-4.jpg')">
+        </div>
+      </div>  
+    </div>
+
+    <div id="cartDiv">
+      <div id="innerCartDiv">Cart</div>
+      <div id="cartContents">
+        <div id="emptyDiv">Your cart is empty</div>
+      </div>
+    </div>
+
+    <span>Sneaker Company</span>
+    
+    <span>Fall Limited Edition Sneakers</span>
+    
+    <div class="productDescription">
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+      </div>
+
+      <span>$125.00</span>
+    
+      <span>50%</span>
+    
+      <span>$250.00</span>
+
+    </div>
+
+    <div class="quantity">
+      <button class="minus" aria-label="Decrease quantity">-</button>
+      <input type="number" class="quantity-input" value="1" min="1" aria-label="Quantity"/>
+      <button class="plus" aria-label="Increase quantity">+</button>
+    </div>  
+
+    <button type="submit" aria-label="Add to Cart">Add to Cart</button>
+  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  
+  </div> 
+  
+  <script>
+    function changeImage(imageSrc) {
+    document.getElementById('mainImage').src = imageSrc;
+  };
+
+  // Select the element
+  // Add event listener for mouseenter (hover) 
+  const collectionElement = document.getElementById('collections');
+  const collectionDivElement = document.getElementById('collectionsDiv');
+
+  collectionElement.addEventListener('mouseenter', function() {
+    collectionDivElement.style.borderBottomColor = 'orange';
+  });
+
+  const menElement = document.getElementById('men');
+  const menDivElement = document.getElementById('menDiv');
+  
+  menElement.addEventListener('mouseenter', function() {
+    menDivElement.style.borderBottomColor = 'orange'; 
+  });
+
+  const womenElement = document.getElementById('women');
+  const womenDivElement = document.getElementById('womenDiv');
+
+  womenElement.addEventListener('mouseenter', function() {
+    womenDivElement.style.borderBottomColor = 'orange';
+  });
+
+  const aboutElement = document.getElementById('about');
+  const aboutDivElement = document.getElementById('aboutDiv');
+
+  aboutElement.addEventListener('mouseenter', function() {
+    aboutDivElement.style.borderBottomColor = 'orange';
+  });
+  
+  const contactElement = document.getElementById('contact');
+  const contactDivElement = document.getElementById('contactDiv');
+
+  contactElement.addEventListener('mouseenter', function() {
+    contactDivElement.style.borderBottomColor = 'orange';
+  });
+
+  // Add event listener for mouseleave (when mouse stops hovering) 
+  collectionElement.addEventListener('mouseleave', function() {
+    collectionDivElement.style.borderBottomColor = 'transparent';
+  });
+  menElement.addEventListener('mouseleave', function() {
+    menDivElement.style.borderBottomColor = 'transparent'; 
+  });
+  womenElement.addEventListener('mouseleave', function() {
+    womenDivElement.style.borderBottomColor = 'transparent';
+  });
+  aboutElement.addEventListener('mouseleave', function() {
+    aboutDivElement.style.borderBottomColor = 'transparent';
+  });
+  contactElement.addEventListener('mouseleave', function() {
+    contactDivElement.style.borderBottomColor = 'transparent';
+  });
+
+  const avatarElement = document.getElementById('avatarSVG')
+
+  avatarElement.addEventListener('mouseenter', function() {
+    avatarElement.style.borderColor = "orange";
+  });
+  avatarElement.addEventListener('mouseleave', function() {
+    avatarElement.style.borderColor = 'transparent';
+  });
+
+  const cartDiv = document.getElementById('cartDiv');
+  const cartSVG = document.getElementById('cartSVG');
+
+  // Function to show the cart window
+  function showCartWindow() {
+    cartDiv.style.display = 'block';
+  }
+
+  // Function to hide the cart window
+  function hideCartWindow() {
+    cartDiv.style.display = 'none';
+  }
+
+  // Event listener on cart SVG to show the cart window on click
+  cartSVG.addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevents event bubbling
+
+    showCartWindow();
+  });
+
+  // Event listener to hide the cart window when clicking outside of it
+  document.addEventListener('click', function(event) {
+    const isClickedInsideCart = cartDiv.contains(event.target);
+    const isClickedOnCartSVG = event.target === cartSVG;
+
+    if (!isClickedInsideCart && !isClickedOnCartSVG) {
+      hideCartWindow();
+    }
+  });
+
+  // Event listener to prevent hiding the cart window when clicking inside it
+  cartDiv.addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevents event bubbling
+  });
+
+  </script> 
+
+</body>
+
+</html>
