@@ -40,65 +40,72 @@
       </div>
     </nav>
     
-    
-
-    <div class="productImgContainer">
-      <div class="largeImage">
-        <img src="images\image-product-1.jpg" class="image" id="mainImage">
-      </div>
-      <div class="galleryWrapper">
-        <div class="galleryImage">
-          <img src="images\image-product-1.jpg" class="image" onclick="changeImage('images/image-product-1.jpg')">
-        </div>
-        <div class="galleryImage">
-          <img src="images\image-product-2.jpg" class="image" onclick="changeImage('images/image-product-2.jpg')">
-        </div>
-        <div class="galleryImage">
-          <img src="images\image-product-3.jpg" class="image" onclick="changeImage('images/image-product-3.jpg')"> 
-        </div>
-        <div class="galleryImage">
-          <img src="images\image-product-4.jpg" class="image" onclick="changeImage('images/image-product-4.jpg')">
-        </div>
-      </div>  
-    </div>
-
     <div id="cartDiv">
-      <div id="innerCartDiv">Cart</div>
-      <div id="cartContents">
-        <div id="emptyDiv">Your cart is empty</div>
+      <div id="innerCartDiv">Cart</div> <!--This just displays the "cart" title-->
+      <div id="emptyDiv">Your cart is empty</div>
+    </div>
+    
+    
+    <div class="product">
+      <div class="productImgContainer">
+       <div class="largeImage">
+         <img src="images\image-product-1.jpg" class="image" id="mainImage">
+       </div>
+       <div class="galleryWrapper">
+         <div class="galleryImage">
+            <img src="images\image-product-1.jpg" class="image" onclick="changeImage('images/image-product-1.jpg')">
+         </div>
+         <div class="galleryImage">
+            <img src="images\image-product-2.jpg" class="image" onclick="changeImage('images/image-product-2.jpg')">
+          </div>
+         <div class="galleryImage">
+           <img src="images\image-product-3.jpg" class="image" onclick="changeImage('images/image-product-3.jpg')"> 
+         </div>
+          <div class="galleryImage">
+            <img src="images\image-product-4.jpg" class="image" onclick="changeImage('images/image-product-4.jpg')">
+          </div>
+        </div>  
+      </div>
+
+    
+
+      <div class="productInfo">
+        <span class="company">SNEAKER COMPANY</span>
+        <span class="shoeName">Fall Limited Edition Sneakers</span>
+        <div class="productDetails">
+          <div class="productDescription">
+            <p>
+              These low-profile sneakers are your perfect casual wear companion. Featuring a 
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <span class="discountPrice">$125.00</span>
+            <span class="discount">50%</span>
+            <br>
+            <br>
+            <span class="price">$250.00</span>
+          </div>
+          <br>
+          <br>
+          <div class="quantity">
+            <div class="quantityBtns">
+              <button class="minus" aria-label="Decrease quantity" ><img src="C:\Users\Riki\OneDrive\Desktop\ecommerce-product-page-main\images\icon-minus.svg"></button>
+              <input type="number" class="quantity-input" value="1" min="1" aria-label="Quantity"/>
+              <button class="plus" aria-label="Increase quantity"><img src="C:\Users\Riki\OneDrive\Desktop\ecommerce-product-page-main\images\icon-plus.svg"></button>
+            </div>  
+            <div class="cartBtnDiv">
+              <button onclick="addToCart()" aria-label="Add to Cart" class="addToCartBtn">
+                <img src="C:\Users\Riki\OneDrive\Desktop\ecommerce-product-page-main\images\icon-cart.svg" alt="cart icon" class="addToCartSvg">Add to Cart
+              </button>
+            </div>  
+          </div> 
+        </div>
       </div>
     </div>
-
-    <span>Sneaker Company</span>
     
-    <span>Fall Limited Edition Sneakers</span>
     
-    <div class="productDescription">
-        <p>
-          These low-profile sneakers are your perfect casual wear companion. Featuring a 
-          durable rubber outer sole, they’ll withstand everything the weather can offer.
-        </p>
-      </div>
-
-      <span>$125.00</span>
-    
-      <span>50%</span>
-    
-      <span>$250.00</span>
-
-    </div>
-
-    <div class="quantity">
-      <button class="minus" aria-label="Decrease quantity">-</button>
-      <input type="number" class="quantity-input" value="1" min="1" aria-label="Quantity"/>
-      <button class="plus" aria-label="Increase quantity">+</button>
-    </div>  
-
-    <button type="submit" aria-label="Add to Cart">Add to Cart</button>
-  
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Leigh Lorenz</a>.
     </div>
   
   </div> 
@@ -205,6 +212,8 @@
   cartDiv.addEventListener('click', function(event) {
     event.stopPropagation(); // Prevents event bubbling
   });
+
+  
 
   </script> 
 

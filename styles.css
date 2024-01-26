@@ -1,6 +1,16 @@
+@font-face {
+  font-family: 'kumbhSans';
+  src: url(C:\Users\Riki\OneDrive\Desktop\ecommerce-product-page-main\Kumbh_Sans\static\KumbhSans-Medium.ttf) format(truetype);
+
+}
+
+
 .container {
 /*border: 3px solid black;*/
   overflow: hidden;
+  margin: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
 }
 
 /* Nav Bar Styles */
@@ -14,17 +24,18 @@
   align-items: center;
   margin-bottom: 100px;
   overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .navBar a {
-  color: #666; 
+  color: hsl(219, 9%, 45%); 
   text-decoration: none;
   font-family: sans-serif;
   font-size: 16px;
 }
 
 .navBar a:hover {
-  color:  #222;
+  color:  hsl(220, 13%, 13%);
 }
 
 .navItems {
@@ -70,48 +81,79 @@
 }
 
 #cartDiv {
-  position: absolute;
+  position: fixed;
   top: 150px;
   right: 70px;
   display: none;
-  /*border: 2px solid black;*/
+  border: 2px solid black;
   border-radius: 5px;
-  width: 300px;
-  height: 170px;
+  width: 30%;
+  min-height: 170px;
   flex-direction: column;
   box-shadow: 0 0px 50px 0px rgba(0, 0, 0, 0.315);
+  background-color: lightseagreen;
   
 }
 
-#innerCartDiv {
-  display: flex;
+#innerCartDiv /*The cart title div*/ {
+  
+  position: relative;
+  
   /*border: 2px solid black;*/
   border-bottom: 2px solid rgba(128, 128, 128, 0.128);
   height: 40px;
-  padding-left: 15px;
+  width: 100%;
   padding-top: 5px;
-  font-family: arial;
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 16px;
 }
 
-#cartContents {
-  display: absolute;
-  width: 300px;
-  height: 130px;
-  background-color: white
 
-}
 
 #emptyDiv {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  display: show;
   text-align: center;
-  top: 45%;
-  /*background-color: lightblue;*/
+  background-color: lightblue;
   font-family: arial;
   font-weight: bold;
   font-size: 16px;
-  color:rgb(128, 128, 128)
+  color:rgb(128, 128, 128);
+  width: 100%;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.item-price {
+  color: green;
+}
+
+.remove-btn {
+  cursor: pointer;
 }
 
 .SVG {
@@ -134,6 +176,7 @@
   padding: 10px;
   width: fit-content;
   margin: 50px;
+  border: 2px solid black
 }
   
 .largeImage img {
@@ -146,10 +189,16 @@
   cursor: pointer;
 }
 
+/*.thumbnail {
+  width: 30px; 
+  height: 30px; 
+} */
+
 .galleryWrapper {
   display: flex;
   gap: 28px;
   margin-top: 16px;
+  border: 2px solid black;
 }
 
 .galleryImage img {
@@ -157,6 +206,7 @@
   height: 67px;
   object-fit: cover;
   border-radius: 10px;
+  
 }
 
 .galleryImage {
@@ -171,6 +221,124 @@
   border-radius: 10px;
 }
 
+.product {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+}
+
+.productInfo {
+  /*border: 2px solid pink;*/
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 50px;
+}
+
+.company {
+  /*border: 2px solid black;*/
+  font-family: sans-serif;
+  font-size: 16;
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.shoeName {
+  /*border: 2px solid black;*/
+  font-size: 32px;
+  font-family: sans-serif;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: hsl(220, 13%, 13%);
+}
+
+.productDetails {
+  /*border: 2px solid red;*/
+  font-size: 16px;
+  font-family: sans-serif;
+  color: hsl(219, 9%, 45%);
+}
+
+.productDescription {
+  /*border: 2px solid green;*/
+  font-weight: 400;
+}
+
+.discountPrice {
+  font-size: 24px;
+  color: hsl(220, 13%, 13%);
+  font-weight: 700;
+  padding-right: 10px
+}
+
+.discount {
+  color:hsl(26, 100%, 55%);
+  font-weight: 700;
+}
+
+.price {
+  color: hsla(217, 9%, 45%, 0.486);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.addToCartBtn {
+  
+  padding: 20px;
+  width: 250px;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(26, 100%, 55%);
+  border: none;
+  border-radius: 10px;
+  
+
+}
+
+.quantityBtns {
+ display: flex;
+ justify-content: space-between;
+ width: 150px;
+ border: 2px solid red;
+ align-items: center;
+ padding: 5px;
+ background-color: hsl(0, 7%, 94%);
+ border-radius: 10px;
+}
+
+.minus {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+}
+
+.quantity-input {
+  width: 20px;
+  height: fit-content;
+  border: none;
+  background-color: hsl(0, 7%, 94%);
+  font-weight: 700;
+}
+
+.plus {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+}
+
+.addToCartSvg {
+  margin-right: 10px;
+}
+
+.quantity {
+  border: 2px solid green;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
 
 
 
@@ -218,6 +386,16 @@
 
 
 /*
+
+#cartContents {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: lightgreen;
+  
+
+}
 .productImage {
     display: none
     }
